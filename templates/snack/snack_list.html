@@ -1,0 +1,18 @@
+
+{% extends '_base.html' %}
+
+{% block content %}
+<div class="flex justify-center">
+<a class="text-indigo-700" href="{% url 'snack_create' %}">Add New Snack</a>
+</div>
+<ul>
+  <div class="grid grid-cols-3 gap-2 place-items-center h-48">
+  {% for snack in object_list %}
+  <li>
+    <a class="text-gray-900 text-2xl"  href="{% url 'snack_detail' snack.pk %}">{{ snack.title }}</a>
+  </li>
+  {% endfor %}
+</div>
+</ul>
+
+{% endblock content %}
